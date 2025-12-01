@@ -1,0 +1,17 @@
+c = 1;
+f[x_] := Which[-Pi/2 <= x <= Pi/2, Cos[x]^3, True, 0]
+u[x_, t_] := (f[x + c*t] + f[x - c*t])/2
+h0 = Plot[Evaluate[u[x, 0]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = 0", LabelStyle -> Directive[Bold, Blue]];
+h1 = Plot[Evaluate[u[x, 1]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = 1", LabelStyle -> Directive[Bold, Blue]];
+h2 = Plot[Evaluate[u[x, Pi/2]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = Pi/2", LabelStyle -> Directive[Bold, Red]];
+h3 = Plot[Evaluate[u[x, 3]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = 3", LabelStyle -> Directive[Bold, Red]];
+h4 = Plot[Evaluate[u[x, 4]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = 4", LabelStyle -> Directive[Bold, Purple]];
+h5 = Plot[Evaluate[u[x, 5]], {x, -8, 8}, PlotRange -> {0, 1}, 
+   PlotLabel -> "Wave at t = 5", LabelStyle -> Directive[Bold, Purple]];
+Show[GraphicsGrid[{{h0, h1}, {h2, h3}, {h4, h5}}, Frame -> All, 
+  FrameStyle -> Black]]
