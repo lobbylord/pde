@@ -15,3 +15,12 @@ h5 = Plot[Evaluate[u[x, 5]], {x, -8, 8}, PlotRange -> {0, 1},
    PlotLabel -> "Wave at t = 5", LabelStyle -> Directive[Bold, Purple]];
 Show[GraphicsGrid[{{h0, h1}, {h2, h3}, {h4, h5}}, Frame -> All, 
   FrameStyle -> Black]]
+
+
+
+
+
+Plot3D[u[x, t], {x, -Pi/2, Pi/2}, {t, 0, 5}, PlotPoints -> 100, 
+ AxesLabel -> {"Position (x)", "Time (t)", "Value (u)"}, 
+ PlotRange -> {0, 1}, PlotLabel -> "Surface: u = u(x,t)", 
+ LabelStyle -> Directive[Bold, Black]]
