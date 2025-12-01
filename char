@@ -1,1 +1,11 @@
-
+f0 = Plot3D[-x, {x, 0, 1}, {y, 0, 1}, PlotPoints -> 10];
+f1 = Plot3D[5 y - x, {x, 0, 1}, {y, 0, 1}, PlotPoints -> 10];
+f2 = Plot3D[10 y - x, {x, 0, 1}, {y, 0, 1}, PlotPoints -> 10];
+g1 = Show[f0, f1, f2];
+h0 = Plot3D[x + y, {x, 0, 1}, {y, 0, 1}, PlotPoints -> 10];
+h1 = Plot3D[sqrt[(x + y)^2 + 5], {x, 0, 1}, {y, 0, 1}, 
+   PlotPoints -> 10];
+h2 = Plot3D[sqrt[(x + y)^2 + 10], {x, 0, 1}, {y, 0, 1}, 
+   PlotPoints -> 10];
+g2 = Show[h0, h1, h2];
+Show[GraphicsArray[{g1, g2}]]
