@@ -1,0 +1,5 @@
+charBaseCurves2 = DSolve[{x'[t] == Exp[t], x[0] == x0}, x[t], t]
+tab = Table[x[t] /. charBaseCurves2[[1]] /. {x0 -> k}, {k, 5, 20, 4}]
+Plot[Evaluate[tab], {t, -4, 4}, PlotStyle -> Thickness[0.01], 
+ PlotLegends -> Table[tab[[i]], {i, 1, 4}], 
+ PlotLabel -> "characteristic base curves"]
