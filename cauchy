@@ -1,0 +1,4 @@
+pde = D[u[x, y], x] - D[u[x, y], y] == 1
+sol = DSolve[{pde, u[x, 0] == x^2}, u[x, y], {x, y}]
+Plot3D[u[x, y] /. sol, {x, -7, 7}, {y, -5, 5}, 
+ PlotLabel -> "Integral surface through initial curve"]
